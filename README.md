@@ -6,8 +6,8 @@ this is a very old but powerfull project of mine
 just copy all of the files to your webroot
 
 login with 
-username: admin
-password: admin' 
+- username: admin
+- password: admin
 
 change admin password and create a user!
 
