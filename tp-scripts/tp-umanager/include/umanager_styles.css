@@ -1,0 +1,261 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+html {
+	color: #536482;
+}
+
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  
+	font-size: 10px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #000000;
+	text-decoration: none;
+	background: #bfb9b8 url("../images/backgroundeditor.png") repeat-x top;
+}
+
+
+
+/* custom header font */
+@font-face {
+	font-family: Reenie Beanie;
+	src: url('../../include/ReenieBeanie.ttf');
+}
+
+
+
+
+#page-header {
+	position: absolute;
+	text-align: right;
+	top: 12px;
+	right: 20px;
+	z-index:0;
+}
+#page-header h1 {
+	color: #767676;
+	font-family: 'Reenie Beanie', arial, serif;
+	font-size: 22px;
+	font-size-adjust:0.58;
+	
+}
+
+#version {
+	color: #767676;
+	font-family: 'Reenie Beanie', arial, serif;
+	font-weight: normal;
+	font-size: 0.8em;
+	margin: 0 12px 0 0;
+	
+}
+
+
+
+
+
+#left{
+	position: relative;
+float: left;
+	top: 50px;
+	width: 500px;
+	margin: 0 0 0 20px;
+	min-height: 350px;
+}
+
+#right{
+	position: relative;
+float: left;
+	top: 50px;
+	width: 670px;
+	margin: 0 0 0 20px;
+	min-height: 350px;
+}
+
+
+
+
+
+.div0{
+	padding: 10px;
+	width: 460px;
+	margin-top: 10px;
+	border: 1px solid #999;
+	background-color: #f1f1f1;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
+	
+}
+
+
+.div1{
+	padding: 10px;
+	width: 460px;
+	margin-top: 10px;
+	border: 1px solid #aaa;
+	background-color:	#e8e8e8;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+
+.heading{
+	font-weight: bold;
+	font-size: 12px;
+	
+}
+
+
+.code {
+	color: #0c58cc;
+	font-size: 12px;
+	padding: 0 2px 0 2px;
+	font-family: Courier New,monospace;
+}
+
+
+.info{
+	border: 1px solid #F4B82B;
+	color: #000;
+	padding: 4px;
+
+	margin-top: 8px;
+	-moz-box-shadow: 0px 0px 10px #F4B82B ;
+	-webkit-box-shadow: 0px 0px 10px #F4B82B ;
+	box-shadow: 0px 0px 10px #F4B82B ;
+
+	
+	
+	
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
+	
+	
+}
+
+.info1{
+	text-align: center;
+	border: 1px solid #F4B82B;
+	color: #000;
+	padding: 4px;
+	margin-left: 0px;
+	margin-top: 8px;
+	-moz-box-shadow: 0px 0px 10px #F4B82B ;
+	-webkit-box-shadow: 0px 0px 10px #F4B82B ;
+	box-shadow: 0px 0px 10px #F4B82B ;
+	
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	
+	
+	
+}
+
+
+A:link { color:#666666; text-decoration:underline;}
+A:visited { color:#666666; text-decoration:underline;}
+A:active { color:#F4B82B; text-decoration:none;}
+A:hover { color:#F4B82B; text-decoration:none;}
+
+
+A{
+	float:right;
+	margin-right:14px;
+}
+.information{
+	float:right;
+	margin:0px;
+}
+
+li{
+	margin-left: 20px;
+	color: #666;
+	list-style-type:georgian;
+	
+}
+
+input {
+	background: #f5f5f5;
+	border: 1px solid #b2b2b2;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;  
+	margin: 0px;
+	padding: 0px;
+}
+
+input.login {
+	
+	border: 1px solid #b2b2b2;
+	color: #ccc;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;  
+	font-style: normal;  
+	line-height: normal;  
+	margin: 1px;
+	padding: 0px;
+}
+
+
+input.admin {
+	background: #e7eeee;
+	border: 1px solid #b2b2b2;
+	color: #888;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;  
+	font-style: normal;  
+	line-height: normal;  
+	margin: 1px;
+	padding: 0px;
+}
+input.button {
+	border: 1px solid #b2b2b2;
+	color: #000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;  
+	font-style: normal;  
+	line-height: normal;  
+	margin: 1px;
+	padding: 2px;
+	cursor: pointer;
+	box-shadow: 0px 0px 4px #999;
+}
+input.button:hover {
+	box-shadow: 0px 0px 8px #555;
+}
+
+
+input.filebutton {
+	background: #e7eeee;
+	border: 1px solid #b2b2b2;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;  
+	font-style: normal;  
+	line-height: normal;  
+	margin: 0px;
+	padding: 0px;
+}

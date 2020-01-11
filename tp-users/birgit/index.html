@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> unathi </title>
+<script src="p5.min.js"></script>
+<style>
+*{
+    margin:0;
+}
+</style>
+</head>
+<body oncontextmenu="return false;">
+
+<div id="zeichenblatt"></div>
+
+
+<script>
+
+
+
+
+
+
+
+
+
+
+let width = 300;   //das is a integer variable  ka string und ned boolean
+let height = 700;
+let ballarray = [];
+let squarearray = [];
+
+
+class BallKlasse {
+    constructor() {
+        this.x = 20;
+        this.y = 20;
+        this.xspeed = 1;
+        this.yspeed = 4;
+        this.radius = 5;
+        this.angle = 0;
+    }
+    fillanddraw(){
+        fill(155,255,0);
+        ellipse(this.x, this.y, this.radius*2, this.radius*2);
+    }
+    checkWallCollisions(){
+    
+        if( this.x > width - this.radius) { 
+            this.x = width - this.radius;
+            this.xspeed = this.xspeed * -1;
+            return false;
+        }
+        if( this.x < this.radius  ) { 
+            this.x = this.radius;
+            this.xspeed = this.xspeed * -1; 
+            return false;
+        }
+          if( this.y > height - this.radius ) {
+            this.y = height - this.radius;
+            this.yspeed = this.yspeed * -1; 
+            return true;
+        }
+        if( this.y < this.radius ) {
+            this.y = this.radius;
+            this.yspeed = this.yspeed * -1; 
+            return false;
+        }
+         
+    }
+    move(){
+//              let ang = radians(this.angle);
+        this.x = this.x + this.xspeed;
+       this.y = this.y + this.yspeed;
+//          this.y = this.y + sin(ang);
+//          this.angle += 1;
+    }
+    
+    checkBallCollisions(){
+        for (let i=0 ; i<ballarray.length; i++){
+            if (ballarray[i].x !== this.x){
+                var dx = this.x - ballarray[i].x;	//abstand X ball aus array i zu ball aus array j
+                var dy = this.y - ballarray[i].y;	//abstand Y ball aus array i zu ball aus array j
+                var dist = sqrt(dx*dx + dy*dy);		//pythagoras ^^
+
+                if (dist < this.radius + ballarray[i].radius){
+   
+                    this.xspeed *= -1;
+                 
+                }
+            }
+        }
+    }
+    
+    checkPlayerCollision(player){
+        if (this.x > player.x && this.x < player.x+player.width && this.y > player.y-this.radius && this.y < player.y + player.height) { this.yspeed = -Math.abs(this.yspeed); }
+    
+    
+    }
+    
+    
+}
+
+
+
+
+
+
+class Player {
+    constructor() {
+        this.x = 150;
+        this.y = 600;
+        this.xspeed = 3;
+        this.width = 100;
+        this.height = 10;
+    }
+    fillanddraw(){
+        fill(0,0,200);
+        rect(this.x, this.y, this.width, this.height);
+    }
+    checkWallCollisions(){
+    
+        if( this.x > width - this.width) { 
+            this.x = width - this.width;
+        }
+        if( this.x < 0  ) { 
+            this.x = 0;
+        }
+    }
+    move(){
+        if (keyIsDown(RIGHT_ARROW)) {
+                this.x = this.x + this.xspeed;
+               
+        } else if (keyIsDown(LEFT_ARROW)) {
+                this.x = this.x - this.xspeed;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let player = new Player();
+
+
+
+function setup(){
+    let canvas = createCanvas(width, height);
+    canvas.parent('zeichenblatt');
+   
+    frameRate(100);
+    noStroke();
+    
+}
+
+let counter = 0;
+
+function draw(){
+    clear();
+    counter++;
+    
+    if (mouseIsPressed && counter % 10 === 0) {
+        if (mouseButton === LEFT) {
+            let neuesBallObject = new BallKlasse();
+            neuesBallObject.x = mouseX;
+            neuesBallObject.y = mouseY;
+            neuesBallObject.xspeed = 2;
+            neuesBallObject.yspeed = random(-4,-7);
+            neuesBallObject.radius = random(2,20);
+            ballarray.push(neuesBallObject);
+        }
+    } 
+    
+   
+    player.move();
+    player.checkWallCollisions();
+    player.fillanddraw();
+
+    for(let i=0; i<ballarray.length; i++){
+        ballarray[i].move();
+        let result = ballarray[i].checkWallCollisions();
+        ballarray[i].checkPlayerCollision(player);
+        ballarray[i].fillanddraw();
+       
+        if (result === true) {  
+            ballarray.splice(i, 1);
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

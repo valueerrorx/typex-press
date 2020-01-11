@@ -1,0 +1,27 @@
+v.1.0 standalone
+fixed a fist full of bugs
+uploader now respects extensions settings from config.php
+resize values for uploader are now configurable in config.php
+added a file called password.php to /tp-scrits/tp-umanager/ in case you forgot your password and need to enter a new hash to users.php ;-)
+reworked tp-umanager (it still sucks ^^)
+-um now creates and deletes user directories
+-um compares old user array to new user array to avoid double entries 
+-um now allows renaming of users
+-um now allows complete configuration of typeX-press (filetypes, sizelimits,...) via GUI
+
+
+
+v.0.8 standalone
+set focus on user-formfield on login
+send loginform with enter
+fixed image preview bug that created hundreds of preview divs
+fixed bug where user was logged out but not forwarded to login page
+
+added "download folder as zip" function (include subdirectories)
+new sub application "image gallery" (read "about_features")
+added "fancybox" image slideshow to filebrowser
+fixed absolute path bug in uploader (changed to relative path)
+fixed hiddentoolsdiv out of position on long lists bug 
+removed double entry for jquery UI
+added resizeable wrapper around left folderlist
+fixed filesize display and added megabyte or kilobyte information
